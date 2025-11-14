@@ -47,3 +47,44 @@ join staging.status s on j.order_status = s.order_status;
 
 select j.order_id, j.order_status, s.order_status_description from staging.joines_table j
 join staging.status s on j.order_status = s.order_status order by j.order_status asc;
+
+/* ----------------------------
+   Investigate unique customers
+   ----------------------------*/
+
+-- distinct 
+
+select distinct order_id from staging.joines_table order by order_id desc;
+
+-- find unique value of customer_id
+
+select distinct customer_id from staging.joines_table order by customer_id asc;
+
+-- It is 'Justina Jenkins' that is the issue
+-- This can be found out by one window function
+
+select * from staging.joines_table where customer_first_name = 'Justina' and customer_last_name = 'Jenkins';
+
+/*
+    Introduce aggregation
+*/
+
+-- aggregate over rows
+-- there are different ways of aggregation (max, minimum, et cetera)
+-- what is the total revenue from all orders
+
+select round(sum(quantity*list_price)) as total_revenue from staging.joines_table;
+
+-- try other aggregation methods
+
+select round(min(quantity*list_price)) as min_revenu, round(max(quantity*list_price)) as max_revenue from staging.joines_table;
+
+/*==============
+    CASE/WHEN
+  ==============*/
+
+-- similar if..else in other languages
+
+-- we can replace the order_status column to some description
+
+select order_id, product_name, case order_status when 1 then 'pending' when 2 then 'processing' when 3 then 'rejected' when 4 then 'completed' end as order_status_description from staging.joines_table;
