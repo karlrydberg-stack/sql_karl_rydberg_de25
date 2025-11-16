@@ -1,0 +1,60 @@
+  a) What is SQL, and why is it important in relational databases?
+  SQL, meaning structured query language, is a language used together with relational databases, to write queries which
+  manipulate and retrieve data from the latter, which is why it is important for RDBMS.
+
+  b) Explain the difference between FROM and WHERE clauses.
+  The latter of the two is used to filter records based on conditions and logic, while FROM, followed by the table name, simply
+  specifies which table to for example retrieve data.
+
+  c) Explain the purpose of the LIMIT or OFFSET clause in a SQL query.
+  LIMIT and OFFSET are clauses which reduce the number of rows returned - which can be useful if you only want to get hold of a 
+  cross-section of data, rather than all of the rows.
+
+  d) What are the primary functions of the Data Definition Language (DDL) in SQL?
+  DDL is a term referring to a group of commands which changes the structures of a database, like tables and schemas. CREATE is
+  an example of a command which can be used to create a database or one of its tables for example.
+
+  e) Explain the differences between the Data Manipulation Language (DML) and Data Definition Language (DDL).
+  DML refers to several commands, like INSERT for example, which all manipulate existing data inside database tables, while 
+  with DDL we refer to the alteration of the structures of the databases and not the actual data contained inside. 
+
+  f) What makes DuckDB unique compared to other databases?
+  DuckDB is free to use and 'ligthweight' albeit powerful, making it accessible for most applications. It also offers extra 
+  analytical features like aggregations.
+
+  g) Is DuckDB suitable for real-time data processing?
+  The answer depends on the scale of the data. In general, for small or medium sized projects, DuckDB might be preferable to use
+  because it runs locally without the need to fetch data from external databases.
+
+  h) Difference between read_csv and read_csv_auto
+  The main difference between these two have to with type inference. The latter will infer data type when scanning through each
+  column. The former will not do this, rather it will read all data as a string.
+
+CRUD = acronym for CREATE, READ, UPDATE and DELETE which are four basic SQL commands	
+query = request made by a user against a database to retrieve some kind of information	
+statement = in SQL, typically an array of keywords which form an instruction for data manipulation	
+DDL	= acronym for Data Definition Language, commands which alter database structures
+DML = acronym for Data Manipulation Language, commands which alter data
+idempotent = a characteristic of some statements where the result remain the same in spite of frequency of triggers  	
+table = a data base structure which consists of rows and columns	
+schema = a data base structure referring to a group of tables	
+row	= cells running from left to right on a table
+record = referring to a row by some, it is a field containing data about some entity
+column = vertical entity of a table, used to store data of a single type 
+database = an organized collection of data inside a computer, which can be retrieved	
+persistance	= a characteristic which refers to the ability of data to remain intact in spite of shut downs et cetera
+DQL	= acronym for Data Querying Language, command which fetches data from a database
+relational database = data base structure consisting of rows and columns 	
+dot commands = 	commands which are not a part of SQL but provide important functionality outside of the queries
+CLI = command-line interface, used to interact with software through commands
+bash = used to write scripts  and run commands in linux	
+type inference = refers to the engines ability to deduce data type automatically	
+clause = it is an essential component of an SQL-statement that define results	
+aliasing = using the keyword AS, it is a way of giving a column for example, a temporary name	
+SQL statement = typically an array of keywords which form an instruction for data manipulation	
+persistent database	= refers to the ability of the data base to remain intact in spite of shut downs et cetera
+.wal = standing for 'write-ahead logging', a structure which provide some data recovery functionality 	
+IDE	= standing for Integrated Development Enviroment, it is a software which facilitates software development, by providing 
+debugger et cetera. 
+csv = standing for 'comma-separated values', it is a file type which store tabular data
+namespace = provides a way for multiple objects to exist in a database without name clashes
